@@ -37,8 +37,32 @@ for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues n
 #df.tail(3)
 
 
+# %%
+
+print("\n\n")
+
+# Código para obtener la desviación estandar de los datos
+for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no  son datos cuantitativos
+    print(str(df.columns[i]) + " --- Desviación estandar: ", (df.iloc[:, i]).std())
+    print("-"*60)
 
 # %%
-#df.describe()
-df.mode()
-# %%
+#print(np.percentile(df,1))
+
+print("\n\n")
+
+# Código para obtener el cuartil 1 de los datos
+for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no  son datos cuantitativos
+    print(str(df.columns[i]) + " --- Cuartil 1: ", np.percentile((df.iloc[:, i]),25))
+    print("-"*60)
+print()
+# Código para obtener el cuartil 2 de los datos
+for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no  son datos cuantitativos
+    print(str(df.columns[i]) + " --- Cuartil 2: ", np.percentile((df.iloc[:, i]),50))
+    print("-"*60)
+print()
+# Código para obtener el cuartil 1 de los datos
+for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no  son datos cuantitativos
+    print(str(df.columns[i]) + " --- Cuartil 3: ", np.percentile((df.iloc[:, i]),75))
+    print("-"*60)
+
