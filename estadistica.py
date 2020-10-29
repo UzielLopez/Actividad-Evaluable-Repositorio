@@ -14,7 +14,7 @@ for variable in df.columns:
 
 # %%
 #Verificar máximos y mínimos de las variables (rango)
-for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no son datos cuantitativos
+for i in range(len(df.columns)): #Ignoramos las primeras dos columnas, pues no son datos cuantitativos
     print(str(df.columns[i]) + " --- Máximo: ", df.iloc[:, i].max(), "Mínimo: ", df.iloc[:, i].min())
     print("-"*40)
 
@@ -37,8 +37,7 @@ for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues n
 #df.tail(3)
 
 
-
 # %%
-#df.describe()
-df.mode()
+df.describe()
+#df.mode()
 # %%
