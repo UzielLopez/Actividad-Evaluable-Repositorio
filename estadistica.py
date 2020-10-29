@@ -16,14 +16,14 @@ for variable in df.columns:
 #Verificar máximos y mínimos de las variables (rango)
 for i in range(len(df.columns)):
     print(str(df.columns[i]) + " --- Máximo: ", df.iloc[i].max(), "Mínimo: ", df.iloc[i].min())
-    print("-"*25)
+    print("-"*40)
 
 
 
 # %%
 for i in range(len(df.columns)):
-    print(str(df.columns[i]) + " --- Media: ", (df.iloc[i]).mean(), "Mediana: ", (df.iloc[i]).median(),"Moda: ", (df.iloc[i]).mode())
-    print("-"*30)
+    print(str(df.columns[i]) + " --- Media: ", (df.iloc[i]).mean(), "Mediana: ", (df.iloc[i]).median(),"Moda: ", (df.iloc[i]).mode()[0])
+    print("-"*60)
 
 #print("Mínimos: ", df.min())
 #print("Máximos:", df.max())
@@ -38,4 +38,7 @@ for i in range(len(df.columns)):
 
 
 
+# %%
+#df.describe()
+df.mode()
 # %%
