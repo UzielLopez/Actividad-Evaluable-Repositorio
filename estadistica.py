@@ -15,7 +15,7 @@ for variable in df.columns:
 
 # %%
 #Verificar máximos y mínimos de las variables (rango)
-for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues no son datos cuantitativos
+for i in range(len(df.columns)): #Ignoramos las primeras dos columnas, pues no son datos cuantitativos
     print(str(df.columns[i]) + " --- Máximo: ", df.iloc[:, i].max(), "Mínimo: ", df.iloc[:, i].min())
     print("-"*40)
 
@@ -39,6 +39,9 @@ for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues n
 
 
 # %%
+df.describe()
+#df.mode()
+
 
 print("\n\n")
 
@@ -67,3 +70,32 @@ for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues n
     print(str(df.columns[i]) + " --- Cuartil 3: ", np.percentile((df.iloc[:, i]),75))
     print("-"*60)
 
+"""
+Tarea 3. Actividad devaluable: Mapas de calor y boxplots 
+Visualizaciones de los datos
+"""
+
+# %%
+#df_variables_cuantitativas = df.drop(["customer", "order", "weekday", "hour"], axis = 1)
+#sns.heatmap(data = df_variables_cuantitativas.corr(), annot = True)
+
+# Diagramas de cajas y bigotes
+#sns.scatterplot(x = "order", y= "discount%", data = df) #discount tiene outlayers
+#sns.scatterplot(x = "discount%", y = "total_items", data = df)
+#sns.scatterplot(x = "discount%", y = "Pets%", data = df)
+#df_sin_ti_outliers  = df [df["total_items"] <= 75]
+#sns.histplot(x = "total_items", data = df)
+#sns.boxplot(x= "total_items", data = df)
+#sns.boxplot(x= "discount%", data = df)
+df_tmp = (df.groupby("weekday"))["order"].count()
+df_tmp.plot.bar()
+#sns.barplot(data  = df_tmp)
+
+#sns.scatterplot(x= "weekday", y = "total_items", data = df)
+#sns.histplot(y = "total_items",  data = tmp)
+
+
+# %%
+df.dtypes
+
+# %%
