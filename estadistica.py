@@ -72,14 +72,14 @@ for i in range(2, len(df.columns)): #Ignoramos las primeras dos columnas, pues n
 
 """
 Tarea 3. Actividad devaluable: Mapas de calor y boxplots 
-Visualizaciones de los datos
+Visualizaciones de los datos. Cada linea representa una gráfica distinta.
+Para evitar que se junten todas en una misma gráfica, recomendamos solo des-comentar una gráfica a la vez
 """
 
 # %%
 #df_variables_cuantitativas = df.drop(["customer", "order", "weekday", "hour"], axis = 1)
 #sns.heatmap(data = df_variables_cuantitativas.corr(), annot = True)
 
-# Diagramas de cajas y bigotes
 #sns.scatterplot(x = "order", y= "discount%", data = df) #discount tiene outlayers
 #sns.scatterplot(x = "discount%", y = "total_items", data = df)
 #sns.scatterplot(x = "discount%", y = "Pets%", data = df)
@@ -96,6 +96,8 @@ df_tmp.plot.bar()
 
 
 # %%
-df.dtypes
+#sns.scatterplot(x= "total_items", y = "discount%", data = df, hue = "weekday")
+#sns.scatterplot(x = "discount%", y = "Food%", data = df, hue = "weekday")
+
 
 # %%
