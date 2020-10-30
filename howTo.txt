@@ -1,0 +1,7 @@
+Para correr el programa de "estadistica.py" en donde se encuentran todos las tablas y datos estadísticos,
+una vez que la persona se encuentre en el repositorio o carpeta con dicho archivo, ejecutar el comando:
+"python3 estadistica.py" en la terminal o línea de comandos.
+
+También, si se tienen instaladas las librerias necesarias, se puede ejecutar celda por celda en el editor
+de codigo que lo permita (preferiblemente gitpod) las secciones de código para vizualizar lo que realizan
+parte por parte.
