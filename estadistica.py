@@ -77,18 +77,38 @@ Para evitar que se junten todas en una misma gráfica, recomendamos solo des-com
 """
 
 # %%
-#df_variables_cuantitativas = df.drop(["customer", "order", "weekday", "hour"], axis = 1)
-#sns.heatmap(data = df_variables_cuantitativas.corr(), annot = True)
+df_variables_cuantitativas = df.drop(["customer", "order", "weekday", "hour"], axis = 1)
+sns.heatmap(data = df_variables_cuantitativas.corr(), annot = True)
 
 #sns.scatterplot(x = "order", y= "discount%", data = df) #discount tiene outlayers
+
 #sns.scatterplot(x = "discount%", y = "total_items", data = df)
+
 #sns.scatterplot(x = "discount%", y = "Pets%", data = df)
+
+#df_con_descuentos  = df [df["discount%"] > 0]
+#sns.histplot(x = "discount%", data = df_con_descuentos)
+
 #df_sin_ti_outliers  = df [df["total_items"] <= 75]
-#sns.histplot(x = "total_items", data = df)
+#sns.histplot(x = "total_items", data = df_sin_ti_outliers)
+
+#sns.histplot(x = "Food%", data = df)
+#sns.histplot(x = "Health%", data = df)
+
 #sns.boxplot(x= "total_items", data = df)
 #sns.boxplot(x= "discount%", data = df)
-df_tmp = (df.groupby("weekday"))["order"].count()
-df_tmp.plot.bar()
+
+#df_tmp = (df.mean())
+#df_tmp = df_tmp.drop(["customer", "order", "total_items", "discount%", "weekday", "hour"])
+#df_tmp.plot.bar()
+
+#df_tmp = (df.groupby("weekday"))["order"].count()
+#df_tmp.plot.bar()
+
+#df_tmp = (df.groupby("weekday"))["order"].mean()
+#df_tmp.plot.bar()
+
+
 #sns.barplot(data  = df_tmp)
 
 #sns.scatterplot(x= "weekday", y = "total_items", data = df)
